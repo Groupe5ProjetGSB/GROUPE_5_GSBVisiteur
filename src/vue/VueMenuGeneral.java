@@ -5,6 +5,8 @@
  */
 package vue;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author btssio
@@ -18,6 +20,26 @@ public class VueMenuGeneral extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getjButtonCompteRenduMP() {
+        return jButtonCompteRenduMP;
+    }
+
+    public JButton getjButtonMedicamentsMP() {
+        return jButtonMedicamentsMP;
+    }
+
+    public JButton getjButtonPraticiensMP() {
+        return jButtonPraticiensMP;
+    }
+
+    public JButton getjButtonQuitterMP() {
+        return jButtonQuitterMP;
+    }
+
+    public JButton getjButtonVisiteursMP() {
+        return jButtonVisiteursMP;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,18 +50,30 @@ public class VueMenuGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jButtonCompteRenduMP = new javax.swing.JButton();
+        jButtonVisiteursMP = new javax.swing.JButton();
+        jButtonPraticiensMP = new javax.swing.JButton();
+        jButtonMedicamentsMP = new javax.swing.JButton();
+        jButtonQuitterMP = new javax.swing.JButton();
+        jLabelCompteRenduMP = new javax.swing.JLabel();
+        jLabelVisiteursMP = new javax.swing.JLabel();
+        jLabelPraticiensMP = new javax.swing.JLabel();
+        jLabelMedicamentsMP = new javax.swing.JLabel();
+        jLabelQuitter = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Gestion des comptes rendus");
 
-        jLabel2.setText("Compte-Rendu");
+        jLabelCompteRenduMP.setText("Compte-Rendu");
+
+        jLabelVisiteursMP.setText("Visiteurs");
+
+        jLabelPraticiensMP.setText("Praticiens");
+
+        jLabelMedicamentsMP.setText("Medicaments");
+
+        jLabelQuitter.setText("Quitter");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -48,15 +82,27 @@ public class VueMenuGeneral extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonQuitterMP, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelQuitter))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonMedicamentsMP, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelMedicamentsMP))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonPraticiensMP, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelPraticiensMP))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonVisiteursMP, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelVisiteursMP))
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonCompteRenduMP, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabelCompteRenduMP)))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -66,16 +112,24 @@ public class VueMenuGeneral extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jButtonCompteRenduMP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCompteRenduMP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonVisiteursMP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelVisiteursMP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonPraticiensMP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPraticiensMP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonMedicamentsMP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelMedicamentsMP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonQuitterMP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelQuitter))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -118,12 +172,16 @@ public class VueMenuGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonCompteRenduMP;
+    private javax.swing.JButton jButtonMedicamentsMP;
+    private javax.swing.JButton jButtonPraticiensMP;
+    private javax.swing.JButton jButtonQuitterMP;
+    private javax.swing.JButton jButtonVisiteursMP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelCompteRenduMP;
+    private javax.swing.JLabel jLabelMedicamentsMP;
+    private javax.swing.JLabel jLabelPraticiensMP;
+    private javax.swing.JLabel jLabelQuitter;
+    private javax.swing.JLabel jLabelVisiteursMP;
     // End of variables declaration//GEN-END:variables
 }

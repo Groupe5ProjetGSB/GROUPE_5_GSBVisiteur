@@ -5,6 +5,11 @@
  */
 package vue;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author btssio
@@ -16,6 +21,46 @@ public class VueMedicament extends javax.swing.JFrame {
      */
     public VueMedicament() {
         initComponents();
+    }
+
+    public JButton getjButtonFermerMedic() {
+        return jButtonFermerMedic;
+    }
+
+    public JButton getjButtonPrecedentMedic() {
+        return jButtonPrecedentMedic;
+    }
+
+    public JButton getjButtonSuivantMedic() {
+        return jButtonSuivantMedic;
+    }
+
+    public JComboBox getjComboBoxFamilleMedic() {
+        return jComboBoxFamilleMedic;
+    }
+
+    public JTextArea getjTextAreaContreIndicationsMedic() {
+        return jTextAreaContreIndicationsMedic;
+    }
+
+    public JTextArea getjTextAreaEffetsIndesirablesMedic() {
+        return jTextAreaEffetsIndesirablesMedic;
+    }
+
+    public JTextField getjTextFieldCodeMedic() {
+        return jTextFieldCodeMedic;
+    }
+
+    public JTextField getjTextFieldCompositionMedic() {
+        return jTextFieldCompositionMedic;
+    }
+
+    public JTextField getjTextFieldNomCommercialMedic() {
+        return jTextFieldNomCommercialMedic;
+    }
+
+    public JTextField getjTextFieldPrixEchantillonMedic() {
+        return jTextFieldPrixEchantillonMedic;
     }
 
     /**
