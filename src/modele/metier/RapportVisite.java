@@ -13,18 +13,18 @@ import java.util.Date;
  */
 public class RapportVisite {
 
-    private Stringg pre_code;
+    private String pre_code;
     private int rap_num;
     private Offrir pra_num;
     private Date rap_date;
     private String rap_motif;
     private String rap_bilan;
 
-    public Stringg getPre_code() {
+    public String getPre_code() {
         return pre_code;
     }
 
-    public void setPre_code(Stringg pre_code) {
+    public void setPre_code(String pre_code) {
         this.pre_code = pre_code;
     }
 
@@ -65,6 +65,15 @@ public class RapportVisite {
     }
 
     public void setRap_bilan(String rap_bilan) {
+        this.rap_bilan = rap_bilan;
+    }
+
+    public RapportVisite(String pre_code, int rap_num, Offrir pra_num, Date rap_date, String rap_motif, String rap_bilan) {
+        this.pre_code = pre_code;
+        this.rap_num = rap_num;
+        this.pra_num = pra_num;
+        this.rap_date = rap_date;
+        this.rap_motif = rap_motif;
         this.rap_bilan = rap_bilan;
     }
 

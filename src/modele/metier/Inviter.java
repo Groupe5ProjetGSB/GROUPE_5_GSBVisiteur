@@ -30,4 +30,9 @@ public class Inviter {
         this.pra_num = pra_num;
     }
 
+    public Inviter(int ac_num, int pra_num) {
+        this.ac_num = ac_num;
+        this.pra_num = pra_num;
+    }
+
 }

@@ -59,4 +59,12 @@ public class ActiviteCompl {
         this.ac_motif = ac_motif;
     }
 
+    public ActiviteCompl(int ac_num, Date ac_date, String ac_lieu, String ac_theme, String ac_motif) {
+        this.ac_num = ac_num;
+        this.ac_date = ac_date;
+        this.ac_lieu = ac_lieu;
+        this.ac_theme = ac_theme;
+        this.ac_motif = ac_motif;
+    }
+
 }

@@ -30,4 +30,9 @@ public class Specialite {
         this.spe_libelle = spe_libelle;
     }
 
+    public Specialite(String spe_code, String spe_libelle) {
+        this.spe_code = spe_code;
+        this.spe_libelle = spe_libelle;
+    }
+
 }

@@ -86,4 +86,15 @@ public class Visiteur {
         this.Lab_code = Lab_code;
     }
 
+    public Visiteur(String vis_matricule, String vis_nom, String vis_adresse, String vis_cp, String vis_ville, Date vis_dateEmbauche, Secteur sec_code, Labo Lab_code) {
+        this.vis_matricule = vis_matricule;
+        this.vis_nom = vis_nom;
+        this.vis_adresse = vis_adresse;
+        this.vis_cp = vis_cp;
+        this.vis_ville = vis_ville;
+        this.vis_dateEmbauche = vis_dateEmbauche;
+        this.sec_code = sec_code;
+        this.Lab_code = Lab_code;
+    }
+
 }

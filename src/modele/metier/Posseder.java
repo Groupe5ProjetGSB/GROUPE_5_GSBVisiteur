@@ -48,4 +48,11 @@ public class Posseder {
         this.pos_coefPrescription = pos_coefPrescription;
     }
 
+    public Posseder(int pra_num, String spe_code, String pos_diplome, float pos_coefPrescription) {
+        this.pra_num = pra_num;
+        this.spe_code = spe_code;
+        this.pos_diplome = pos_diplome;
+        this.pos_coefPrescription = pos_coefPrescription;
+    }
+
 }

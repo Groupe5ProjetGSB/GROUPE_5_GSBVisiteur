@@ -39,4 +39,10 @@ public class TypePraticien {
         this.typ_lieu = typ_lieu;
     }
 
+    public TypePraticien(String typ_code, String typ_libelle, String typ_lieu) {
+        this.typ_code = typ_code;
+        this.typ_libelle = typ_libelle;
+        this.typ_lieu = typ_lieu;
+    }
+
 }

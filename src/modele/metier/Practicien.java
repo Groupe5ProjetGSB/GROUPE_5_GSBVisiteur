@@ -75,4 +75,14 @@ public class Practicien {
         this.typ_code = typ_code;
     }
 
+    public Practicien(int pra_num, String pra_nom, String pra_prenom, String pra_cp, String pra_ville, float pra_coefNotoriete, TypePraticien typ_code) {
+        this.pra_num = pra_num;
+        this.pra_nom = pra_nom;
+        this.pra_prenom = pra_prenom;
+        this.pra_cp = pra_cp;
+        this.pra_ville = pra_ville;
+        this.pra_coefNotoriete = pra_coefNotoriete;
+        this.typ_code = typ_code;
+    }
+
 }

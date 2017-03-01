@@ -39,4 +39,10 @@ public class Realiser {
         this.rea_mttfrais = rea_mttfrais;
     }
 
+    public Realiser(int ac_num, String vis_matricule, float rea_mttfrais) {
+        this.ac_num = ac_num;
+        this.vis_matricule = vis_matricule;
+        this.rea_mttfrais = rea_mttfrais;
+    }
+
 }

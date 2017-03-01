@@ -63,4 +63,12 @@ public class Travailler {
         this.tra_role = tra_role;
     }
 
+    public Travailler(Date JJMMAA, String vis_matricule, String regCode, String visiteur, String tra_role) {
+        this.JJMMAA = JJMMAA;
+        this.vis_matricule = vis_matricule;
+        this.regCode = regCode;
+        this.visiteur = visiteur;
+        this.tra_role = tra_role;
+    }
+
 }
