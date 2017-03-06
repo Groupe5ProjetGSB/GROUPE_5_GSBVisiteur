@@ -11,40 +11,44 @@ package modele.metier;
  */
 public class Labo {
 
-    private String lab_Code;
+    private String codeLabo;
 
-    private String lab_Nom;
+    private String nomLabo;
 
-    private String lab_ChefVente;
+    private String chefVenteLabo;
 
-    public String getLab_Code() {
-        return lab_Code;
+    public Labo(String nomLabo, String chefVenteLabo) {
+        this.nomLabo = nomLabo;
+        this.chefVenteLabo = chefVenteLabo;
     }
 
-    public void setLab_Code(String lab_Code) {
-        this.lab_Code = lab_Code;
+    
+    
+    
+    public String getCodeLabo() {
+        return codeLabo;
     }
 
-    public String getLab_Nom() {
-        return lab_Nom;
+    public void setCodeLabo(String codeLabo) {
+        this.codeLabo = codeLabo;
     }
 
-    public void setLab_Nom(String lab_Nom) {
-        this.lab_Nom = lab_Nom;
+    public String getNomLabo() {
+        return nomLabo;
     }
 
-    public String getLab_ChefVente() {
-        return lab_ChefVente;
+    public void setNomLabo(String nomLabo) {
+        this.nomLabo = nomLabo;
     }
 
-    public void setLab_ChefVente(String lab_ChefVente) {
-        this.lab_ChefVente = lab_ChefVente;
+    public String getChefVenteLabo() {
+        return chefVenteLabo;
     }
 
-    public Labo(String lab_Code, String lab_Nom, String lab_ChefVente) {
-        this.lab_Code = lab_Code;
-        this.lab_Nom = lab_Nom;
-        this.lab_ChefVente = lab_ChefVente;
+    public void setChefVenteLabo(String chefVenteLabo) {
+        this.chefVenteLabo = chefVenteLabo;
     }
+
+   
 
 }

@@ -13,88 +13,102 @@ import java.util.Date;
  */
 public class Visiteur {
 
-    private String vis_matricule;
-    private String vis_nom;
-    private String vis_adresse;
-    private String vis_cp;
-    private String vis_ville;
-    private Date vis_dateEmbauche;
-    private Secteur sec_code;
-    private Labo Lab_code;
+    private String matriculeVisiteur;
+    private String nomVisiteur;
+    private String adresseVisiteur;
+    private String cpVisiteur;
+    private String villeVisiteur;
+    private Date dateEmbaucheVisiteur;
+    private Secteur codeSecteur;
+    private Labo codeLabo;
 
-    public String getVis_matricule() {
-        return vis_matricule;
+    public Visiteur(String matriculeVisiteur, String nomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur) {
+        this.matriculeVisiteur = matriculeVisiteur;
+        this.nomVisiteur = nomVisiteur;
+        this.adresseVisiteur = adresseVisiteur;
+        this.cpVisiteur = cpVisiteur;
+        this.villeVisiteur = villeVisiteur;
+        this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
     }
 
-    public void setVis_matricule(String vis_matricule) {
-        this.vis_matricule = vis_matricule;
+    public Visiteur(String matriculeVisiteur, String nomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur, Secteur codeSecteur, Labo codeLabo) {
+        this.matriculeVisiteur = matriculeVisiteur;
+        this.nomVisiteur = nomVisiteur;
+        this.adresseVisiteur = adresseVisiteur;
+        this.cpVisiteur = cpVisiteur;
+        this.villeVisiteur = villeVisiteur;
+        this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
+        this.codeSecteur = codeSecteur;
+        this.codeLabo = codeLabo;
     }
 
-    public String getVis_nom() {
-        return vis_nom;
+    
+    
+    
+    public String getMatriculeVisiteur() {
+        return matriculeVisiteur;
     }
 
-    public void setVis_nom(String vis_nom) {
-        this.vis_nom = vis_nom;
+    public void setMatriculeVisiteur(String matriculeVisiteur) {
+        this.matriculeVisiteur = matriculeVisiteur;
     }
 
-    public String getVis_adresse() {
-        return vis_adresse;
+    public String getNomVisiteur() {
+        return nomVisiteur;
     }
 
-    public void setVis_adresse(String vis_adresse) {
-        this.vis_adresse = vis_adresse;
+    public void setNomVisiteur(String nomVisiteur) {
+        this.nomVisiteur = nomVisiteur;
     }
 
-    public String getVis_cp() {
-        return vis_cp;
+    public String getAdresseVisiteur() {
+        return adresseVisiteur;
     }
 
-    public void setVis_cp(String vis_cp) {
-        this.vis_cp = vis_cp;
+    public void setAdresseVisiteur(String adresseVisiteur) {
+        this.adresseVisiteur = adresseVisiteur;
     }
 
-    public String getVis_ville() {
-        return vis_ville;
+    public String getCpVisiteur() {
+        return cpVisiteur;
     }
 
-    public void setVis_ville(String vis_ville) {
-        this.vis_ville = vis_ville;
+    public void setCpVisiteur(String cpVisiteur) {
+        this.cpVisiteur = cpVisiteur;
     }
 
-    public Date getVis_dateEmbauche() {
-        return vis_dateEmbauche;
+    public String getVilleVisiteur() {
+        return villeVisiteur;
     }
 
-    public void setVis_dateEmbauche(Date vis_dateEmbauche) {
-        this.vis_dateEmbauche = vis_dateEmbauche;
+    public void setVilleVisiteur(String villeVisiteur) {
+        this.villeVisiteur = villeVisiteur;
     }
 
-    public Secteur getSec_code() {
-        return sec_code;
+    public Date getDateEmbaucheVisiteur() {
+        return dateEmbaucheVisiteur;
     }
 
-    public void setSec_code(Secteur sec_code) {
-        this.sec_code = sec_code;
+    public void setDateEmbaucheVisiteur(Date dateEmbaucheVisiteur) {
+        this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
     }
 
-    public Labo getLab_code() {
-        return Lab_code;
+    public Secteur getCodeSecteur() {
+        return codeSecteur;
     }
 
-    public void setLab_code(Labo Lab_code) {
-        this.Lab_code = Lab_code;
+    public void setCodeSecteur(Secteur codeSecteur) {
+        this.codeSecteur = codeSecteur;
     }
 
-    public Visiteur(String vis_matricule, String vis_nom, String vis_adresse, String vis_cp, String vis_ville, Date vis_dateEmbauche, Secteur sec_code, Labo Lab_code) {
-        this.vis_matricule = vis_matricule;
-        this.vis_nom = vis_nom;
-        this.vis_adresse = vis_adresse;
-        this.vis_cp = vis_cp;
-        this.vis_ville = vis_ville;
-        this.vis_dateEmbauche = vis_dateEmbauche;
-        this.sec_code = sec_code;
-        this.Lab_code = Lab_code;
+    public Labo getCodeLabo() {
+        return codeLabo;
     }
+
+    public void setCodeLabo(Labo codeLabo) {
+        this.codeLabo = codeLabo;
+    }
+
+   
 
 }

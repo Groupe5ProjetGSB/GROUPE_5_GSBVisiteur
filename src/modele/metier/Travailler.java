@@ -5,6 +5,7 @@
  */
 package modele.metier;
 
+import java.util.List;
 import java.util.Date;
 
 /**
@@ -15,13 +16,20 @@ public class Travailler {
 
     private Date JJMMAA;
 
-    private String vis_matricule;
+    private List<Visiteur> visiteurMatricule;
 
-    private String regCode;
+    private List<Region> codeRegion;
 
-    private String visiteur;
+    private String roleTravailleur;
 
-    private String tra_role;
+    public Travailler(Date JJMMAA, List<Visiteur> visiteurMatricule, List<Region> codeRegion, String roleTravailleur) {
+        this.JJMMAA = JJMMAA;
+        this.visiteurMatricule = visiteurMatricule;
+        this.codeRegion = codeRegion;
+        this.roleTravailleur = roleTravailleur;
+    }
+    
+    
 
     public Date getJJMMAA() {
         return JJMMAA;
@@ -31,44 +39,29 @@ public class Travailler {
         this.JJMMAA = JJMMAA;
     }
 
-    public String getVis_matricule() {
-        return vis_matricule;
+    public List<Visiteur> getVisiteurMatricule() {
+        return visiteurMatricule;
     }
 
-    public void setVis_matricule(String vis_matricule) {
-        this.vis_matricule = vis_matricule;
+    public void setVisiteurMatricule(List<Visiteur> visiteurMatricule) {
+        this.visiteurMatricule = visiteurMatricule;
     }
 
-    public String getRegCode() {
-        return regCode;
+    public List<Region> getCodeRegion() {
+        return codeRegion;
     }
 
-    public void setRegCode(String regCode) {
-        this.regCode = regCode;
+    public void setCodeRegion(List<Region> codeRegion) {
+        this.codeRegion = codeRegion;
     }
 
-    public String getVisiteur() {
-        return visiteur;
+    public String getRoleTravailleur() {
+        return roleTravailleur;
     }
 
-    public void setVisiteur(String visiteur) {
-        this.visiteur = visiteur;
+    public void setRoleTravailleur(String roleTravailleur) {
+        this.roleTravailleur = roleTravailleur;
     }
 
-    public String getTra_role() {
-        return tra_role;
-    }
-
-    public void setTra_role(String tra_role) {
-        this.tra_role = tra_role;
-    }
-
-    public Travailler(Date JJMMAA, String vis_matricule, String regCode, String visiteur, String tra_role) {
-        this.JJMMAA = JJMMAA;
-        this.vis_matricule = vis_matricule;
-        this.regCode = regCode;
-        this.visiteur = visiteur;
-        this.tra_role = tra_role;
-    }
-
+    
 }
