@@ -5,6 +5,12 @@
  */
 package vue;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Windows 8.1
@@ -16,6 +22,144 @@ public class VueVisiteur extends javax.swing.JFrame {
      */
     public VueVisiteur() {
         initComponents();
+        
+        
+    }
+
+    public JButton getjButtonChercherVisiteur() {
+        return jButtonChercherVisiteur;
+    }
+
+    public void setjButtonChercherVisiteur(JButton jButtonChercherVisiteur) {
+        this.jButtonChercherVisiteur = jButtonChercherVisiteur;
+    }
+
+    public JComboBox getjComboBoxChercher() {
+        return jComboBoxChercher;
+    }
+
+    public void setjComboBoxChercher(JComboBox jComboBoxChercher) {
+        this.jComboBoxChercher = jComboBoxChercher;
+    }
+
+    public JComboBox getjComboBoxLabo() {
+        return jComboBoxLabo;
+    }
+
+    public void setjComboBoxLabo(JComboBox jComboBoxLabo) {
+        this.jComboBoxLabo = jComboBoxLabo;
+    }
+
+    public JComboBox getjComboBoxSecteur() {
+        return jComboBoxSecteur;
+    }
+
+    public void setjComboBoxSecteur(JComboBox jComboBoxSecteur) {
+        this.jComboBoxSecteur = jComboBoxSecteur;
+    }
+
+    public JLabel getjLabelAdresse() {
+        return jLabelAdresse;
+    }
+
+    public void setjLabelAdresse(JLabel jLabelAdresse) {
+        this.jLabelAdresse = jLabelAdresse;
+    }
+
+    public JLabel getjLabelChercher() {
+        return jLabelChercher;
+    }
+
+    public void setjLabelChercher(JLabel jLabelChercher) {
+        this.jLabelChercher = jLabelChercher;
+    }
+
+    public JLabel getjLabelLabo() {
+        return jLabelLabo;
+    }
+
+    public void setjLabelLabo(JLabel jLabelLabo) {
+        this.jLabelLabo = jLabelLabo;
+    }
+
+    public JLabel getjLabelNom() {
+        return jLabelNom;
+    }
+
+    public void setjLabelNom(JLabel jLabelNom) {
+        this.jLabelNom = jLabelNom;
+    }
+
+    public JLabel getjLabelPrenom() {
+        return jLabelPrenom;
+    }
+
+    public void setjLabelPrenom(JLabel jLabelPrenom) {
+        this.jLabelPrenom = jLabelPrenom;
+    }
+
+    public JLabel getjLabelSecteur() {
+        return jLabelSecteur;
+    }
+
+    public void setjLabelSecteur(JLabel jLabelSecteur) {
+        this.jLabelSecteur = jLabelSecteur;
+    }
+
+    public JLabel getjLabelVille() {
+        return jLabelVille;
+    }
+
+    public void setjLabelVille(JLabel jLabelVille) {
+        this.jLabelVille = jLabelVille;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JTextField getjTextFieldAdresse() {
+        return jTextFieldAdresse;
+    }
+
+    public void setjTextFieldAdresse(JTextField jTextFieldAdresse) {
+        this.jTextFieldAdresse = jTextFieldAdresse;
+    }
+
+    public JTextField getjTextFieldCp() {
+        return jTextFieldCp;
+    }
+
+    public void setjTextFieldCp(JTextField jTextFieldCp) {
+        this.jTextFieldCp = jTextFieldCp;
+    }
+
+    public JTextField getjTextFieldNom() {
+        return jTextFieldNom;
+    }
+
+    public void setjTextFieldNom(JTextField jTextFieldNom) {
+        this.jTextFieldNom = jTextFieldNom;
+    }
+
+    public JTextField getjTextFieldNomVille() {
+        return jTextFieldNomVille;
+    }
+
+    public void setjTextFieldNomVille(JTextField jTextFieldNomVille) {
+        this.jTextFieldNomVille = jTextFieldNomVille;
+    }
+
+    public JTextField getjTextFieldPrenom() {
+        return jTextFieldPrenom;
+    }
+
+    public void setjTextFieldPrenom(JTextField jTextFieldPrenom) {
+        this.jTextFieldPrenom = jTextFieldPrenom;
     }
 
     /**
@@ -30,7 +174,7 @@ public class VueVisiteur extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jComboBoxChercher = new javax.swing.JComboBox();
         jLabelChercher = new javax.swing.JLabel();
-        jButtonChercher = new javax.swing.JButton();
+        jButtonChercherVisiteur = new javax.swing.JButton();
         jLabelNom = new javax.swing.JLabel();
         jLabelPrenom = new javax.swing.JLabel();
         jLabelAdresse = new javax.swing.JLabel();
@@ -53,7 +197,12 @@ public class VueVisiteur extends javax.swing.JFrame {
 
         jLabelChercher.setText("Chercher");
 
-        jButtonChercher.setText("Ok");
+        jButtonChercherVisiteur.setText("Ok");
+        jButtonChercherVisiteur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChercherVisiteurActionPerformed(evt);
+            }
+        });
 
         jLabelNom.setText("Nom");
 
@@ -108,7 +257,7 @@ public class VueVisiteur extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextFieldNomVille)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonChercher))
+                        .addComponent(jButtonChercherVisiteur))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelSecteur)
@@ -126,7 +275,7 @@ public class VueVisiteur extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelChercher)
-                    .addComponent(jButtonChercher))
+                    .addComponent(jButtonChercherVisiteur))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNom)
@@ -169,6 +318,10 @@ public class VueVisiteur extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonChercherVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChercherVisiteurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonChercherVisiteurActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -205,7 +358,7 @@ public class VueVisiteur extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonChercher;
+    private javax.swing.JButton jButtonChercherVisiteur;
     private javax.swing.JComboBox jComboBoxChercher;
     private javax.swing.JComboBox jComboBoxLabo;
     private javax.swing.JComboBox jComboBoxSecteur;
