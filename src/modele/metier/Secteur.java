@@ -14,6 +14,10 @@ public class Secteur {
     private String sec_code;
     private String sec_libelle;
 
+    public Secteur(String sec_code) {
+        this.sec_code = sec_code;
+    }
+
     public String getSec_code() {
         return sec_code;
     }

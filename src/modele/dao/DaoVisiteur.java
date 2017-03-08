@@ -9,7 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import modele.metier.Labo;
+import modele.metier.Secteur;
 import modele.metier.Visiteur;
 
 /**
@@ -17,9 +20,8 @@ import modele.metier.Visiteur;
  * @author Windows 8.1
  */
 public class DaoVisiteur {
-    
-    
-     /**
+
+    /**
      * selectOne : lire un enregistrement dans la table CLIENT
      *
      * @param numClient : identifiant conceptuel du client recherché
@@ -41,7 +43,6 @@ public class DaoVisiteur {
 //        }
 //        return unClient;
 //    }
-
     /**
      * lire tous les enregistrements de la table CLIENT
      *
@@ -59,11 +60,17 @@ public class DaoVisiteur {
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
-            int id = rs.getInt("ID");
-            String rue = rs.getString("RUE");
-            String cdp = rs.getString("CDP");
-            String ville = rs.getString("VILLE");
-            unVisiteur = new Visiteur(id, rue, cdp, ville);
+            String matriculeVisiteur = rs.getString("VIS_MATRICULE");
+            String nomVisiteur = rs.getString("VIS_NOM");
+            String prenomVisiteur = rs.getString("Vis_PRENOM");
+            String adresseVisiteur = rs.getString("VIS_ADRESSE");
+            String cpVisiteur = rs.getString("VIS_CP");
+            String villeVisiteur = rs.getString("VIS_VILLE");
+            String codeSecteur = rs.getString("SEC_CODE");
+            Secteur unSecteur = DaoSecteur.selectOne(codeSecteur);
+
+            Date dateEmbaucheVisiteur = rs.getDate("VIE_DATEEMBAUCHE");
+            unVisiteur = DaoVisiteur.visiteurFromResultSet(rs);
             lesVisiteur.add(unVisiteur);
         }
         return lesVisiteur;
@@ -77,21 +84,22 @@ public class DaoVisiteur {
      * du ResultSet
      * @throws SQLException
      */
-//    private static Client clientFromResultSet(ResultSet rs) throws SQLException {
-//        Client clt = null;
-//        String numClient = rs.getString("NUMCLIENT");
-//        int idAdresse = rs.getInt("ID_ADRESSE");
-//        String nom = rs.getString("NOM");
-//        String prenom = rs.getString("PRENOM");
-//        String login = rs.getString("LOGIN");
-//        String mdp = rs.getString("MOTDEPASSE");
-//        java.sql.Date ddn = rs.getDate("DATEDENAISSANCE");
-//        clt = new Client(numClient, nom, prenom, login, DaoClient.toUtilDate(ddn));
-//        clt.setMotDePasse(mdp);
-//        Adresse adr = DaoAdresse.selectOne(idAdresse);
-//        clt.setAdresse(adr);
-//        return clt;
-//    }
+    private static Visiteur visiteurFromResultSet(ResultSet rs) throws SQLException {
+        Visiteur clt = null;
+        String matriculeVisiteur = rs.getString("VIS_MATRICULE");
+        String nomVisiteur = rs.getString("VIS_NOM");
+        String prenomVisiteur = rs.getString("Vis_PRENOM");
+        String adresseVisiteur = rs.getString("VIS_ADRESSE");
+        String cpVisiteur = rs.getString("VIS_CP");
+        String villeVisiteur = rs.getString("VIS_VILLE");
+        Date dateEmbaucheVisiteur = rs.getDate("VIE_DATEEMBAUCHE");
+        clt = new Visiteur(matriculeVisiteur, nomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur);
+        Labo codeLabo = DaoLabo.selectAll();
+        clt.setCodeLabo(codeLabo);
+        Secteur codeSecteur = DaoSecteur.selectAll();
+        clt.setCodeSecteur(codeSecteur);
+        return clt;
+    }
 
     /**
      * conversion de java.util.Date vers java.sql.Date
@@ -143,14 +151,14 @@ public class DaoVisiteur {
 //        nb = pstmt.executeUpdate();
 //        return nb;
 //    }
-
     /**
      * update : modifier un enregistrement de la table CLIENT
      *
      * @param numClient : identifiant conceptuel du client à modifier
      * @param unClient : instance de la classe Client contenant les nouvelles
      * valeurs à enregistrer dans la table CLIENT sous le même identifiant
-     * @param idAdresse : identifiant relationnel de la table Adresse (clef étrangère)
+     * @param idAdresse : identifiant relationnel de la table Adresse (clef
+     * étrangère)
      * @return : 1 si l'enregistrement a eu lieu ; en cas d'erreur, une
      * exception est émise
      * @throws SQLException
@@ -174,13 +182,14 @@ public class DaoVisiteur {
 //        nb = pstmt.executeUpdate();
 //        return nb;
 //    }
-
     /**
      * delete : supprimer un enregistrement de la table CLIENT
+     *
      * @param numClient : identifiant conceptuel du client à supprimer
-     * @return : 1 si la suppression a eu lieu ; en cas d'erreur, une exception est émise
-     * @throws SQLException 
-//     */
+     * @return : 1 si la suppression a eu lieu ; en cas d'erreur, une exception
+     * est émise
+     * @throws SQLException //
+     */
 //    public static int delete(String numClient) throws SQLException {
 //        int nb;
 //        Jdbc jdbc = Jdbc.getInstance();
@@ -192,6 +201,5 @@ public class DaoVisiteur {
 //        pstmt.setString(1, numClient);
 //        nb = pstmt.executeUpdate();
 //        return nb;
-//    }    
-    
+//    }
 }

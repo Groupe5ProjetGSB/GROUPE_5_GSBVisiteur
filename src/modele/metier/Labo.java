@@ -22,9 +22,10 @@ public class Labo {
         this.chefVenteLabo = chefVenteLabo;
     }
 
-    
-    
-    
+    public Labo(String codeLabo) {
+        this.codeLabo = codeLabo;
+    }
+
     public String getCodeLabo() {
         return codeLabo;
     }
@@ -48,7 +49,5 @@ public class Labo {
     public void setChefVenteLabo(String chefVenteLabo) {
         this.chefVenteLabo = chefVenteLabo;
     }
-
-   
 
 }

@@ -18,11 +18,10 @@ import vue.VueMenuGeneral;
  */
 public class CtrlMenuGeneral implements WindowListener, ActionListener {
 
-      private VueMenuGeneral vue;         // LA VUE
-      private CtrlPrincipal ctrlPrincipal;
+    private VueMenuGeneral vue;         // LA VUE
+    private CtrlPrincipal ctrlPrincipal;
 
-      
-      //Methode de la classe
+    //Methode de la classe
     public VueMenuGeneral getVue() {
         return vue;
     }
@@ -38,10 +37,8 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
     public void setCtrlPrincipal(CtrlPrincipal ctrlPrincipal) {
         this.ctrlPrincipal = ctrlPrincipal;
     }
-    
-    
-      //Controlleur de la classe
 
+    //Controlleur de la classe
     public CtrlMenuGeneral(VueMenuGeneral vue, CtrlPrincipal ctrlPrincipal) {
         this.vue = vue;
         this.ctrlPrincipal = ctrlPrincipal;
@@ -51,9 +48,7 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
         // préparer l'état iniitial de la vue
         //afficherLesVisiteur();
     }
-    
-      
-      
+
     @Override
     public void windowOpened(WindowEvent we) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -91,10 +86,10 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(vue.getjButtonVisiteursMP()) ){
-                ctrlPrincipal.afficherLesVisiteur();
-                System.out.println("ok");
-            }
+        if (e.getSource().equals(vue.getjButtonVisiteursMP())) {
+            ctrlPrincipal.afficherLesVisiteur();
+            System.out.println("ok");
+        }
     }
-    
+
 }

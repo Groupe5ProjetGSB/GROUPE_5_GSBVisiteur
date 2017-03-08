@@ -15,6 +15,7 @@ public class Visiteur {
 
     private String matriculeVisiteur;
     private String nomVisiteur;
+    private String prenomVisiteur;
     private String adresseVisiteur;
     private String cpVisiteur;
     private String villeVisiteur;
@@ -31,9 +32,10 @@ public class Visiteur {
         this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
     }
 
-    public Visiteur(String matriculeVisiteur, String nomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur, Secteur codeSecteur, Labo codeLabo) {
+    public Visiteur(String matriculeVisiteur, String nomVisiteur, String prenomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur, Secteur codeSecteur, Labo codeLabo) {
         this.matriculeVisiteur = matriculeVisiteur;
         this.nomVisiteur = nomVisiteur;
+        this.prenomVisiteur = prenomVisiteur;
         this.adresseVisiteur = adresseVisiteur;
         this.cpVisiteur = cpVisiteur;
         this.villeVisiteur = villeVisiteur;
@@ -42,9 +44,14 @@ public class Visiteur {
         this.codeLabo = codeLabo;
     }
 
-    
-    
-    
+    public String getPrenomVisiteur() {
+        return prenomVisiteur;
+    }
+
+    public void setPrenomVisiteur(String prenomVisiteur) {
+        this.prenomVisiteur = prenomVisiteur;
+    }
+
     public String getMatriculeVisiteur() {
         return matriculeVisiteur;
     }
@@ -108,7 +115,5 @@ public class Visiteur {
     public void setCodeLabo(Labo codeLabo) {
         this.codeLabo = codeLabo;
     }
-
-   
 
 }
