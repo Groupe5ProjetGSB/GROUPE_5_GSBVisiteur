@@ -17,7 +17,7 @@ import modele.metier.Secteur;
  */
 public class DaoSecteur {
 
-    public static Secteur selectOne() throws SQLException {
+    /*public static Secteur selectOne() throws SQLException {
         Secteur unSecteur = null;
         ResultSet rs;
         PreparedStatement pstmt;
@@ -32,7 +32,7 @@ public class DaoSecteur {
         }
         return unSecteur;
     }
-
+     */
     public static Secteur selectOne(String codeSecteur) throws SQLException {
         Secteur unSecteur = null;
         ResultSet rs;
