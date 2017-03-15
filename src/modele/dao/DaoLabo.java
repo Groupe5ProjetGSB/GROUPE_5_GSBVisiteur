@@ -16,20 +16,22 @@ import modele.metier.Labo;
  */
 public class DaoLabo {
 
-    public static Labo selectAll() throws SQLException {
+    public static Labo selectOne(String codeLabo) throws SQLException {
         Labo unLabo = null;
         ResultSet rs;
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM LABO";
+        String requete = "SELECT * FROM LABO WHERE LAB_CODE= ?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
+        pstmt.setString(1, codeLabo);
         rs = pstmt.executeQuery();
         if (rs.next()) {
-            String codeLabo = rs.getString("LAB_CODE");
-            unLabo = new Labo(codeLabo);
+            String codeLab = rs.getString("LAB_CODE");
+            unLabo = new Labo(codeLab);
         }
         return unLabo;
+
     }
 
 }

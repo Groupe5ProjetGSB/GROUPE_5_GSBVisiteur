@@ -21,10 +21,10 @@ import vue.VueVisiteur;
  *
  * @author Windows 8.1
  */
-public class CtrlVisiteur implements WindowListener, ActionListener{
-    
-      private VueVisiteur vue;         // LA VUE
-      private CtrlPrincipal ctrlPrincipal;
+public class CtrlVisiteur implements WindowListener, ActionListener {
+
+    private VueVisiteur vue;         // LA VUE
+    private CtrlPrincipal ctrlPrincipal;
 
     public VueVisiteur getVue() {
         return vue;
@@ -41,88 +41,110 @@ public class CtrlVisiteur implements WindowListener, ActionListener{
     public void setCtrlPrincipal(CtrlPrincipal ctrlPrincipal) {
         this.ctrlPrincipal = ctrlPrincipal;
     }
-      
-      
-      
-      
-      // Controlleur de la classe
-      
-        public CtrlVisiteur(VueVisiteur vue, CtrlPrincipal ctrl) {
+
+    // Controlleur de la classe
+    public CtrlVisiteur(VueVisiteur vue, CtrlPrincipal ctrl) {
         this.vue = vue;
         this.ctrlPrincipal = ctrl;
         // le contrôleur écoute la vue
         this.vue.addWindowListener(this);
         this.vue.getjButtonChercherVisiteur().addActionListener(this);
+        this.vue.getjButtonFermer().addActionListener(this);
+        this.vue.getjButtonPrecedent().addActionListener(this);
+        this.vue.getjButtonSuivant().addActionListener(this);
         // préparer l'état iniitial de la vue
-        //afficherLesVisiteur();
+        afficherLesVisiteur();
     }
-       
-       
-       // méthodes publiques
-   /* public final void afficherLesVisiteur() {
-         List<Visiteur> lesVisiteurs = null;
+
+    public final void afficherLesVisiteur() {
+        List<Visiteur> lesVisiteur = null;
         try {
-            lesVisiteurs = DaoVisiteur.selectAll();
-            getVue().getModeleTableClients().setRowCount(0);
-            String[] titresColonnes = {"Nom", "Prénom", "Ddn"};
-            getVue().getModeleTableClients().setColumnIdentifiers(titresColonnes);
-            String[] ligneDonnees = new String[3];
+            lesVisiteur = DaoVisiteur.selectAll();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            for (Client unClient : lesVisiteurs) {
-                ligneDonnees[0] = unClient.getNom();
-                ligneDonnees[1] = unClient.getPrenom();
-                ligneDonnees[2] = sdf.format(unClient.getDateNaissance());
-                getVue().getModeleTableClients().addRow(ligneDonnees);
+            for (Visiteur unVisiteur : lesVisiteur) {
+                getVue().getjComboBoxChercher().addItem(unVisiteur);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(getVue(), "CtrlLesClients - échec de sélection des clients");
         }
+    }
 
-    }*/
+    public final void afficherVueVisiteur() {
+        Visiteur unVisiteur = (Visiteur) vue.getjComboBoxChercher().getSelectedItem();
+        getVue().getjTextFieldNom().setText(unVisiteur.getNomVisiteur());
+        getVue().getjTextFieldPrenom().setText(unVisiteur.getPrenomVisiteur());
+        getVue().getjTextFieldAdresse().setText(unVisiteur.getAdresseVisiteur());
+        getVue().getjTextFieldCp().setText(unVisiteur.getCpVisiteur());
+        getVue().getjTextFieldNomVille().setText(unVisiteur.getVilleVisiteur());
+    }
 
     private void quitter() {
         ctrlPrincipal.quitterApplication();
     }
-    
+
     @Override
     public void windowOpened(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowClosing(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        quitter();
     }
 
     @Override
     public void windowClosed(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowIconified(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowDeiconified(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowActivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowDeactivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       /* if (e.getSource().equals(vue.getjButtonVisiteur()) ){
+        /* if (e.getSource().equals(vue.getjButtonVisiteur()) ){
                 ctrlPrincipal.afficherLesVisiteur();
             }*/
+
+        if (e.getSource().equals(vue.getjButtonChercherVisiteur())) {
+            afficherVueVisiteur();
+        }
+        if (e.getSource().equals(vue.getjButtonPrecedent())) {
+            int i = vue.getjComboBoxChercher().getSelectedIndex();
+            int z = i - 1;
+
+            if (z > -1) {
+                vue.getjComboBoxChercher().setSelectedIndex(z);
+                afficherVueVisiteur();
+            }
+        }
+        if (e.getSource().equals(vue.getjButtonSuivant())) {
+
+            int i = vue.getjComboBoxChercher().getSelectedIndex();
+            int z = i + 1;
+
+            if (z > i) {
+                vue.getjComboBoxChercher().setSelectedIndex(z);
+                afficherVueVisiteur();
+            }
+
+        }
     }
 }

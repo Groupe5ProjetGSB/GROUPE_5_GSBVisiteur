@@ -21,34 +21,6 @@ import modele.metier.Visiteur;
  */
 public class DaoVisiteur {
 
-    /**
-     * selectOne : lire un enregistrement dans la table CLIENT
-     *
-     * @param numClient : identifiant conceptuel du client recherché
-     * @return une instance de la classe Adresse
-     * @throws SQLException
-     */
-//    public static Client selectOne(String numClient) throws SQLException {
-//        Client unClient = null;
-//        ResultSet rs = null;
-//        PreparedStatement pstmt;
-//        Jdbc jdbc = Jdbc.getInstance();
-//        // préparer la requête
-//        String requete = "SELECT * FROM CLIENT WHERE NUMCLIENT= ?";
-//        pstmt = jdbc.getConnexion().prepareStatement(requete);
-//        pstmt.setString(1, numClient);
-//        rs = pstmt.executeQuery();
-//        if (rs.next()) {
-//            unClient = DaoClient.clientFromResultSet(rs);
-//        }
-//        return unClient;
-//    }
-    /**
-     * lire tous les enregistrements de la table CLIENT
-     *
-     * @return une collection d'instances de la classe Client
-     * @throws SQLException
-     */
     public static List<Visiteur> selectAll() throws SQLException {
         List<Visiteur> lesVisiteur = new ArrayList<Visiteur>();
         Visiteur unVisiteur = null;
@@ -66,11 +38,13 @@ public class DaoVisiteur {
             String adresseVisiteur = rs.getString("VIS_ADRESSE");
             String cpVisiteur = rs.getString("VIS_CP");
             String villeVisiteur = rs.getString("VIS_VILLE");
+            Date dateEmbaucheVisiteur = rs.getDate("VIS_DATEEMBAUCHE");
             String codeSecteur = rs.getString("SEC_CODE");
+            String codeLabo = rs.getString("LAB_CODE");
             Secteur unSecteur = DaoSecteur.selectOne(codeSecteur);
+            Labo unLabo = DaoLabo.selectOne(codeLabo);
 
-            Date dateEmbaucheVisiteur = rs.getDate("VIE_DATEEMBAUCHE");
-            unVisiteur = DaoVisiteur.visiteurFromResultSet(rs);
+            unVisiteur = new Visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, unSecteur, unLabo);
             lesVisiteur.add(unVisiteur);
         }
         return lesVisiteur;
@@ -84,23 +58,6 @@ public class DaoVisiteur {
      * du ResultSet
      * @throws SQLException
      */
-    private static Visiteur visiteurFromResultSet(ResultSet rs) throws SQLException {
-        Visiteur clt = null;
-        String matriculeVisiteur = rs.getString("VIS_MATRICULE");
-        String nomVisiteur = rs.getString("VIS_NOM");
-        String prenomVisiteur = rs.getString("Vis_PRENOM");
-        String adresseVisiteur = rs.getString("VIS_ADRESSE");
-        String cpVisiteur = rs.getString("VIS_CP");
-        String villeVisiteur = rs.getString("VIS_VILLE");
-        Date dateEmbaucheVisiteur = rs.getDate("VIE_DATEEMBAUCHE");
-        clt = new Visiteur(matriculeVisiteur, nomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur);
-        Labo codeLabo = DaoLabo.selectAll();
-        clt.setCodeLabo(codeLabo);
-        Secteur codeSecteur = DaoSecteur.selectAll();
-        clt.setCodeSecteur(codeSecteur);
-        return clt;
-    }
-
     /**
      * conversion de java.util.Date vers java.sql.Date
      *

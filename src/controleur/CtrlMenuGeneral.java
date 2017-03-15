@@ -45,43 +45,49 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
         // le contrôleur écoute la vue
         this.vue.addWindowListener(this);
         this.vue.getjButtonVisiteursMP().addActionListener(this);
+        this.vue.getjButtonMedicamentsMP().addActionListener(this);
+        this.vue.getjButtonPraticiensMP().addActionListener(this);
         // préparer l'état iniitial de la vue
         //afficherLesVisiteur();
     }
 
+    private void quitter() {
+        ctrlPrincipal.quitterApplication();
+    }
+
     @Override
     public void windowOpened(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowClosing(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowClosed(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        quitter();
     }
 
     @Override
     public void windowIconified(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowDeiconified(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowActivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void windowDeactivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
@@ -89,6 +95,10 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
         if (e.getSource().equals(vue.getjButtonVisiteursMP())) {
             ctrlPrincipal.afficherLesVisiteur();
             System.out.println("ok");
+        } else if (e.getSource().equals(vue.getjButtonMedicamentsMP())) {
+            ctrlPrincipal.afficherMedicament();
+        } else if (e.getSource().equals(vue.getjButtonPraticiensMP())) {
+            ctrlPrincipal.afficherPracticien();
         }
     }
 
