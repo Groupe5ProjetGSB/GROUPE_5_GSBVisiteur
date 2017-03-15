@@ -230,10 +230,6 @@ public class VueVisiteur extends javax.swing.JFrame {
 
         jLabelLabo.setText("Labo");
 
-        jComboBoxSecteur.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBoxLabo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jButtonPrecedent.setText("Précédent");
 
         jButtonSuivant.setText("Suivant");
@@ -302,7 +298,7 @@ public class VueVisiteur extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxChercher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelChercher)
                     .addComponent(jButtonChercherVisiteur))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

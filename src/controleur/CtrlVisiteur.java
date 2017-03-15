@@ -12,8 +12,14 @@ import java.awt.event.WindowListener;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modele.dao.DaoLabo;
+import modele.dao.DaoSecteur;
 import modele.dao.DaoVisiteur;
+import modele.metier.Labo;
+import modele.metier.Secteur;
 import modele.metier.Visiteur;
 import vue.VueVisiteur;
 
@@ -58,24 +64,71 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
 
     public final void afficherLesVisiteur() {
         List<Visiteur> lesVisiteur = null;
+        List<Labo> lesLabo = null;
+        List<Secteur> lesSecteur = null;
         try {
             lesVisiteur = DaoVisiteur.selectAll();
+            lesSecteur = DaoSecteur.selectAll();
+            lesLabo = DaoLabo.selectAll();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             for (Visiteur unVisiteur : lesVisiteur) {
                 getVue().getjComboBoxChercher().addItem(unVisiteur);
             }
+            for (Secteur unSecteur : lesSecteur) {
+                getVue().getjComboBoxSecteur().addItem(unSecteur);
+            }
+            for (Labo unLabo : lesLabo) {
+                getVue().getjComboBoxLabo().addItem(unLabo);
+            }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(getVue(), "CtrlLesClients - échec de sélection des clients");
+            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - échec de sélection des Visiteur");
         }
     }
 
-    public final void afficherVueVisiteur() {
+    /* public final void afficherLesLab(){
+            List<Labo> lesLabo = null;
+             try {
+            lesLabo = DaoLabo.selectOne(codeLabo);
+            for (Visiteur unVisiteur : lesVisiteur) {
+                getVue().getjComboBoxChercher().addItem(unVisiteur);
+            }
+            } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - échec de sélection des Visiteur");
+            }
+    }*/
+    public final void afficherVueVisiteur() throws SQLException {
+
         Visiteur unVisiteur = (Visiteur) vue.getjComboBoxChercher().getSelectedItem();
+        Secteur unSecteur = (Secteur) vue.getjComboBoxSecteur().getSelectedItem();
+        Labo unLabo = (Labo) vue.getjComboBoxLabo().getSelectedItem();
+
         getVue().getjTextFieldNom().setText(unVisiteur.getNomVisiteur());
         getVue().getjTextFieldPrenom().setText(unVisiteur.getPrenomVisiteur());
         getVue().getjTextFieldAdresse().setText(unVisiteur.getAdresseVisiteur());
         getVue().getjTextFieldCp().setText(unVisiteur.getCpVisiteur());
         getVue().getjTextFieldNomVille().setText(unVisiteur.getVilleVisiteur());
+        getVue().getjComboBoxLabo().sets
+    }
+
+    public final int indexLabo(Labo labo) throws SQLException {
+        int indexLabo = 0;
+        Labo nomLabo = DaoLabo.selectOne(labo.getCodeLabo());
+
+        String nom = nomLabo.getNomLabo();
+        switch (nom) {
+            case "Bichat":
+                indexLabo = 0;
+                break;
+            case "Gyverny":
+                indexLabo = 1;
+                break;
+            case "Swiss Kane":
+                indexLabo = 2;
+                break;
+
+        }
+
+        return indexLabo;
     }
 
     private void quitter() {
@@ -124,7 +177,11 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
             }*/
 
         if (e.getSource().equals(vue.getjButtonChercherVisiteur())) {
-            afficherVueVisiteur();
+            try {
+                afficherVueVisiteur();
+            } catch (SQLException ex) {
+                Logger.getLogger(CtrlVisiteur.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (e.getSource().equals(vue.getjButtonPrecedent())) {
             int i = vue.getjComboBoxChercher().getSelectedIndex();
@@ -132,7 +189,11 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
 
             if (z > -1) {
                 vue.getjComboBoxChercher().setSelectedIndex(z);
-                afficherVueVisiteur();
+                try {
+                    afficherVueVisiteur();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CtrlVisiteur.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
         if (e.getSource().equals(vue.getjButtonSuivant())) {
@@ -142,7 +203,11 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
 
             if (z > i) {
                 vue.getjComboBoxChercher().setSelectedIndex(z);
-                afficherVueVisiteur();
+                try {
+                    afficherVueVisiteur();
+                } catch (SQLException ex) {
+                    Logger.getLogger(CtrlVisiteur.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
 
         }

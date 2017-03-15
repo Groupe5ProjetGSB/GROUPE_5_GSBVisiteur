@@ -116,4 +116,9 @@ public class Visiteur {
         this.codeLabo = codeLabo;
     }
 
+    @Override
+    public String toString() {
+        return nomVisiteur + " " + prenomVisiteur;
+    }
+
 }
