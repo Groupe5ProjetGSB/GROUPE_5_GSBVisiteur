@@ -25,6 +25,14 @@ public class VueVisiteur extends javax.swing.JFrame {
 
     }
 
+    public JTextField getjTextFieldLabo() {
+        return jTextFieldLabo;
+    }
+
+    public JTextField getjTextFieldSecteur() {
+        return jTextFieldSecteur;
+    }
+
     public JButton getjButtonFermer() {
         return jButtonFermer;
     }
@@ -51,22 +59,6 @@ public class VueVisiteur extends javax.swing.JFrame {
 
     public void setjComboBoxChercher(JComboBox jComboBoxChercher) {
         this.jComboBoxChercher = jComboBoxChercher;
-    }
-
-    public JComboBox getjComboBoxLabo() {
-        return jComboBoxLabo;
-    }
-
-    public void setjComboBoxLabo(JComboBox jComboBoxLabo) {
-        this.jComboBoxLabo = jComboBoxLabo;
-    }
-
-    public JComboBox getjComboBoxSecteur() {
-        return jComboBoxSecteur;
-    }
-
-    public void setjComboBoxSecteur(JComboBox jComboBoxSecteur) {
-        this.jComboBoxSecteur = jComboBoxSecteur;
     }
 
     public JLabel getjLabelAdresse() {
@@ -197,11 +189,11 @@ public class VueVisiteur extends javax.swing.JFrame {
         jTextFieldAdresse = new javax.swing.JTextField();
         jTextFieldCp = new javax.swing.JTextField();
         jTextFieldNomVille = new javax.swing.JTextField();
-        jComboBoxSecteur = new javax.swing.JComboBox();
-        jComboBoxLabo = new javax.swing.JComboBox();
         jButtonPrecedent = new javax.swing.JButton();
         jButtonSuivant = new javax.swing.JButton();
         jButtonFermer = new javax.swing.JButton();
+        jTextFieldSecteur = new javax.swing.JTextField();
+        jTextFieldLabo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -280,10 +272,10 @@ public class VueVisiteur extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelSecteur)
                                     .addComponent(jLabelLabo))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBoxSecteur, 0, 126, Short.MAX_VALUE)
-                                    .addComponent(jComboBoxLabo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jTextFieldSecteur)
+                                    .addComponent(jTextFieldLabo, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButtonPrecedent)
@@ -319,14 +311,14 @@ public class VueVisiteur extends javax.swing.JFrame {
                     .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNomVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelSecteur)
-                    .addComponent(jComboBoxSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLabo)
-                    .addComponent(jComboBoxLabo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                    .addComponent(jTextFieldLabo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPrecedent)
                     .addComponent(jButtonSuivant)
@@ -393,8 +385,6 @@ public class VueVisiteur extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPrecedent;
     private javax.swing.JButton jButtonSuivant;
     private javax.swing.JComboBox jComboBoxChercher;
-    private javax.swing.JComboBox jComboBoxLabo;
-    private javax.swing.JComboBox jComboBoxSecteur;
     private javax.swing.JLabel jLabelAdresse;
     private javax.swing.JLabel jLabelChercher;
     private javax.swing.JLabel jLabelLabo;
@@ -405,8 +395,10 @@ public class VueVisiteur extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldAdresse;
     private javax.swing.JTextField jTextFieldCp;
+    private javax.swing.JTextField jTextFieldLabo;
     private javax.swing.JTextField jTextFieldNom;
     private javax.swing.JTextField jTextFieldNomVille;
     private javax.swing.JTextField jTextFieldPrenom;
+    private javax.swing.JTextField jTextFieldSecteur;
     // End of variables declaration//GEN-END:variables
 }

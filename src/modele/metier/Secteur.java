@@ -19,8 +19,8 @@ public class Secteur {
         this.libelleSecteur = libelleSecteur;
     }
 
-    public Secteur(String libelleSecteur) {
-        this.libelleSecteur = libelleSecteur;
+    public Secteur(String sec_code) {
+        this.codeSecteur = sec_code;
     }
 
     public String getSec_code() {

@@ -28,8 +28,8 @@ public class Labo {
         this.chefVenteLabo = chefVenteLabo;
     }
 
-    public Labo(String nomLabo) {
-        this.nomLabo = nomLabo;
+    public Labo(String codeLabo) {
+        this.codeLabo = codeLabo;
     }
 
     public String getCodeLabo() {

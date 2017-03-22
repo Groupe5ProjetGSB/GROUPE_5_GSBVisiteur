@@ -50,8 +50,9 @@ public class DaoSecteur {
         pstmt.setString(1, codeSecteur);
         rs = pstmt.executeQuery();
         if (rs.next()) {
-            String leSecteur = rs.getString("SEC_LIBELLE");
-            unSecteur = new Secteur(leSecteur);
+            String leSecteur = rs.getString("SEC_CODE");
+            String libelleSecteur = rs.getString("SEC_LIBELLE");
+            unSecteur = new Secteur(leSecteur, libelleSecteur);
         }
         return unSecteur;
 

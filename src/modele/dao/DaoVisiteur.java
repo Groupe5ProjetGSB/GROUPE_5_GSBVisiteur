@@ -43,7 +43,6 @@ public class DaoVisiteur {
             String codeLabo = rs.getString("LAB_CODE");
             Secteur unSecteur = DaoSecteur.selectOne(codeSecteur);
             Labo unLabo = DaoLabo.selectOne(codeLabo);
-
             unVisiteur = new Visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, unSecteur, unLabo);
             lesVisiteur.add(unVisiteur);
         }

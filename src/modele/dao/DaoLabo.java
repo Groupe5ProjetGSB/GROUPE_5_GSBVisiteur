@@ -51,8 +51,9 @@ public class DaoLabo {
         pstmt.setString(1, codeLabo);
         rs = pstmt.executeQuery();
         if (rs.next()) {
-            String nomLabo = rs.getString("LAB_NOM");
-
+            String codeLab = rs.getString("LAB_CODE");
+            String nomLab = rs.getString("LAB_NOM");
+            unLabo = new Labo(codeLab, nomLab);
         }
         return unLabo;
 

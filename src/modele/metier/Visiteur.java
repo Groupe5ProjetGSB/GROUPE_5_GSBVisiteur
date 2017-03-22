@@ -20,8 +20,8 @@ public class Visiteur {
     private String cpVisiteur;
     private String villeVisiteur;
     private Date dateEmbaucheVisiteur;
-    private Secteur codeSecteur;
-    private Labo codeLabo;
+    private Secteur secteur;
+    private Labo labo;
 
     public Visiteur(String matriculeVisiteur, String nomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur) {
         this.matriculeVisiteur = matriculeVisiteur;
@@ -40,8 +40,8 @@ public class Visiteur {
         this.cpVisiteur = cpVisiteur;
         this.villeVisiteur = villeVisiteur;
         this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
-        this.codeSecteur = codeSecteur;
-        this.codeLabo = codeLabo;
+        this.secteur = codeSecteur;
+        this.labo = codeLabo;
     }
 
     public String getPrenomVisiteur() {
@@ -100,20 +100,20 @@ public class Visiteur {
         this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
     }
 
-    public Secteur getCodeSecteur() {
-        return codeSecteur;
+    public Secteur getSecteur() {
+        return secteur;
     }
 
-    public void setCodeSecteur(Secteur codeSecteur) {
-        this.codeSecteur = codeSecteur;
+    public void setSecteur(Secteur secteur) {
+        this.secteur = secteur;
     }
 
-    public Labo getCodeLabo() {
-        return codeLabo;
+    public Labo getLabo() {
+        return labo;
     }
 
-    public void setCodeLabo(Labo codeLabo) {
-        this.codeLabo = codeLabo;
+    public void setLabo(Labo labo) {
+        this.labo = labo;
     }
 
     @Override

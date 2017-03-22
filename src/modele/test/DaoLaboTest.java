@@ -27,10 +27,18 @@ public class DaoLaboTest {
         System.out.println("Test0 effectué : connexion\n");
         test1_SelectUnique();
         System.out.println("Test1 effectué : sélection unique\n");
+        test2_SelectUnique();
+        System.out.println("Test2 effectué :");
         if (cnx != null) {
             cnx.close();
         }
 
+    }
+
+    public static void test2_SelectUnique() throws SQLException {
+
+        Labo desLabo = DaoLabo.selectOne("BC");
+        System.out.println(desLabo.getNomLabo());
     }
 
     public static void test1_SelectUnique() throws SQLException {

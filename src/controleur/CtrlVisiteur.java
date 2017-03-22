@@ -74,12 +74,12 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
             for (Visiteur unVisiteur : lesVisiteur) {
                 getVue().getjComboBoxChercher().addItem(unVisiteur);
             }
-            for (Secteur unSecteur : lesSecteur) {
+            /* for (Secteur unSecteur : lesSecteur) {
                 getVue().getjComboBoxSecteur().addItem(unSecteur);
             }
             for (Labo unLabo : lesLabo) {
                 getVue().getjComboBoxLabo().addItem(unLabo);
-            }
+            }*/
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - échec de sélection des Visiteur");
         }
@@ -99,18 +99,28 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
     public final void afficherVueVisiteur() throws SQLException {
 
         Visiteur unVisiteur = (Visiteur) vue.getjComboBoxChercher().getSelectedItem();
-        Secteur unSecteur = (Secteur) vue.getjComboBoxSecteur().getSelectedItem();
-        Labo unLabo = (Labo) vue.getjComboBoxLabo().getSelectedItem();
 
         getVue().getjTextFieldNom().setText(unVisiteur.getNomVisiteur());
         getVue().getjTextFieldPrenom().setText(unVisiteur.getPrenomVisiteur());
         getVue().getjTextFieldAdresse().setText(unVisiteur.getAdresseVisiteur());
         getVue().getjTextFieldCp().setText(unVisiteur.getCpVisiteur());
         getVue().getjTextFieldNomVille().setText(unVisiteur.getVilleVisiteur());
-        getVue().getjComboBoxLabo().sets
+
+        if (unVisiteur.getSecteur().getSec_libelle() == "") {
+            getVue().getjTextFieldSecteur().setText("Aucun Secteur");
+        } else {
+            getVue().getjTextFieldSecteur().setText(unVisiteur.getSecteur().getSec_libelle());
+        }
+
+        if (unVisiteur.getLabo().getNomLabo() == "") {
+            getVue().getjTextFieldLabo().setText("Aucun Labo");
+        } else {
+            getVue().getjTextFieldLabo().setText(unVisiteur.getLabo().getNomLabo());
+        }
+
     }
 
-    public final int indexLabo(Labo labo) throws SQLException {
+    /*public final int indexLabo(Labo labo) throws SQLException {
         int indexLabo = 0;
         Labo nomLabo = DaoLabo.selectOne(labo.getCodeLabo());
 
@@ -125,12 +135,10 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
             case "Swiss Kane":
                 indexLabo = 2;
                 break;
-
         }
 
         return indexLabo;
-    }
-
+    }*/
     private void quitter() {
         ctrlPrincipal.quitterApplication();
     }
