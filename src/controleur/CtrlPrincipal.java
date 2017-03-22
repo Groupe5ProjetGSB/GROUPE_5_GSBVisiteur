@@ -17,6 +17,7 @@ public class CtrlPrincipal {
     CtrlMenuGeneral ctrlMenuGeneral;
     CtrlMedicament ctrlMedicament;
     CtrlPracticien ctrlPracticien;
+    CtrlRapportVisitie ctrlRapportVisitie;
 
     public void afficherLesVisiteur() {
         this.ctrlVisiteur.getVue().setVisible(true);
@@ -43,6 +44,14 @@ public class CtrlPrincipal {
         this.ctrlPracticien.getVue().setVisible(true);
     }
 
+    public void afficherCompteRendu() {
+        this.ctrlVisiteur.getVue().setVisible(false);
+        this.ctrlMenuGeneral.getVue().setVisible(false);
+        this.ctrlMedicament.getVue().setVisible(false);
+        this.ctrlPracticien.getVue().setVisible(false);
+        this.ctrlRapportVisitie.getVue().setVisible(true);
+    }
+
     public void quitterApplication() {
         // Confirmer avant de quitter
         int rep = JOptionPane.showConfirmDialog(null, "Quitter l'application\nEtes-vous sûr(e) ?", "GSB", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -51,6 +60,14 @@ public class CtrlPrincipal {
             System.exit(0);
         }
 
+    }
+
+    public CtrlRapportVisitie getCtrlRapportVisitie() {
+        return ctrlRapportVisitie;
+    }
+
+    public void setCtrlRapportVisitie(CtrlRapportVisitie ctrlRapportVisitie) {
+        this.ctrlRapportVisitie = ctrlRapportVisitie;
     }
 
     public CtrlPracticien getCtrlPracticien() {

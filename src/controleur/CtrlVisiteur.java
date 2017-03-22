@@ -52,13 +52,13 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
     public CtrlVisiteur(VueVisiteur vue, CtrlPrincipal ctrl) {
         this.vue = vue;
         this.ctrlPrincipal = ctrl;
-        // le contrôleur écoute la vue
+        // le controleur ecoute la vue
         this.vue.addWindowListener(this);
         this.vue.getjButtonChercherVisiteur().addActionListener(this);
         this.vue.getjButtonFermer().addActionListener(this);
         this.vue.getjButtonPrecedent().addActionListener(this);
         this.vue.getjButtonSuivant().addActionListener(this);
-        // préparer l'état iniitial de la vue
+        // preparer l'etat iniitial de la vue
         afficherLesVisiteur();
     }
 
@@ -81,21 +81,10 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
                 getVue().getjComboBoxLabo().addItem(unLabo);
             }*/
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - échec de sélection des Visiteur");
+            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - echec de selection des Visiteur");
         }
     }
 
-    /* public final void afficherLesLab(){
-            List<Labo> lesLabo = null;
-             try {
-            lesLabo = DaoLabo.selectOne(codeLabo);
-            for (Visiteur unVisiteur : lesVisiteur) {
-                getVue().getjComboBoxChercher().addItem(unVisiteur);
-            }
-            } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - échec de sélection des Visiteur");
-            }
-    }*/
     public final void afficherVueVisiteur() throws SQLException {
 
         Visiteur unVisiteur = (Visiteur) vue.getjComboBoxChercher().getSelectedItem();
@@ -106,39 +95,23 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
         getVue().getjTextFieldCp().setText(unVisiteur.getCpVisiteur());
         getVue().getjTextFieldNomVille().setText(unVisiteur.getVilleVisiteur());
 
-        if (unVisiteur.getSecteur().getSec_libelle() == "") {
-            getVue().getjTextFieldSecteur().setText("Aucun Secteur");
-        } else {
-            getVue().getjTextFieldSecteur().setText(unVisiteur.getSecteur().getSec_libelle());
-        }
+        try {
+            if (unVisiteur.getSecteur().getSec_libelle() == null) {
+                getVue().getjTextFieldSecteur().setText("Aucun Secteur");
+            } else {
+                getVue().getjTextFieldSecteur().setText(unVisiteur.getSecteur().getSec_libelle());
+            }
 
-        if (unVisiteur.getLabo().getNomLabo() == "") {
-            getVue().getjTextFieldLabo().setText("Aucun Labo");
-        } else {
-            getVue().getjTextFieldLabo().setText(unVisiteur.getLabo().getNomLabo());
+            if (unVisiteur.getLabo().getNomLabo() == null) {
+                getVue().getjTextFieldLabo().setText("Aucun Labo");
+            } else {
+                getVue().getjTextFieldLabo().setText(unVisiteur.getLabo().getNomLabo());
+            }
+        } catch (Exception e) {
         }
 
     }
 
-    /*public final int indexLabo(Labo labo) throws SQLException {
-        int indexLabo = 0;
-        Labo nomLabo = DaoLabo.selectOne(labo.getCodeLabo());
-
-        String nom = nomLabo.getNomLabo();
-        switch (nom) {
-            case "Bichat":
-                indexLabo = 0;
-                break;
-            case "Gyverny":
-                indexLabo = 1;
-                break;
-            case "Swiss Kane":
-                indexLabo = 2;
-                break;
-        }
-
-        return indexLabo;
-    }*/
     private void quitter() {
         ctrlPrincipal.quitterApplication();
     }

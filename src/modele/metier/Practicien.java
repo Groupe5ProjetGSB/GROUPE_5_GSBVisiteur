@@ -11,78 +11,78 @@ package modele.metier;
  */
 public class Practicien {
 
-    private int pra_num;
-    private String pra_nom;
-    private String pra_prenom;
-    private String pra_cp;
-    private String pra_ville;
-    private float pra_coefNotoriete;
-    private TypePraticien typ_code;
+    private int numeroPracticien;
+    private String nomPracticien;
+    private String prenomPracticien;
+    private String cpPracticien;
+    private String villePracticien;
+    private float coefNotorietePracticien;
+    private TypePraticien codeTypePracticien;
 
-    public int getPra_num() {
-        return pra_num;
+    public Practicien(int numeroPracticien, String nomPracticien, String prenomPracticien, String cpPracticien, String villePracticien, float coefNotorietePracticien, TypePraticien codeTypePracticien) {
+        this.numeroPracticien = numeroPracticien;
+        this.nomPracticien = nomPracticien;
+        this.prenomPracticien = prenomPracticien;
+        this.cpPracticien = cpPracticien;
+        this.villePracticien = villePracticien;
+        this.coefNotorietePracticien = coefNotorietePracticien;
+        this.codeTypePracticien = codeTypePracticien;
     }
 
-    public void setPra_num(int pra_num) {
-        this.pra_num = pra_num;
+    public int getNumeroPracticien() {
+        return numeroPracticien;
     }
 
-    public String getPra_nom() {
-        return pra_nom;
+    public void setNumeroPracticien(int numeroPracticien) {
+        this.numeroPracticien = numeroPracticien;
     }
 
-    public void setPra_nom(String pra_nom) {
-        this.pra_nom = pra_nom;
+    public String getNomPracticien() {
+        return nomPracticien;
     }
 
-    public String getPra_prenom() {
-        return pra_prenom;
+    public void setNomPracticien(String nomPracticien) {
+        this.nomPracticien = nomPracticien;
     }
 
-    public void setPra_prenom(String pra_prenom) {
-        this.pra_prenom = pra_prenom;
+    public String getPrenomPracticien() {
+        return prenomPracticien;
     }
 
-    public String getPra_cp() {
-        return pra_cp;
+    public void setPrenomPracticien(String prenomPracticien) {
+        this.prenomPracticien = prenomPracticien;
     }
 
-    public void setPra_cp(String pra_cp) {
-        this.pra_cp = pra_cp;
+    public String getCpPracticien() {
+        return cpPracticien;
     }
 
-    public String getPra_ville() {
-        return pra_ville;
+    public void setCpPracticien(String cpPracticien) {
+        this.cpPracticien = cpPracticien;
     }
 
-    public void setPra_ville(String pra_ville) {
-        this.pra_ville = pra_ville;
+    public String getVillePracticien() {
+        return villePracticien;
     }
 
-    public float getPra_coefNotoriete() {
-        return pra_coefNotoriete;
+    public void setVillePracticien(String villePracticien) {
+        this.villePracticien = villePracticien;
     }
 
-    public void setPra_coefNotoriete(float pra_coefNotoriete) {
-        this.pra_coefNotoriete = pra_coefNotoriete;
+    public float getCoefNotorietePracticien() {
+        return coefNotorietePracticien;
     }
 
-    public TypePraticien getTyp_code() {
-        return typ_code;
+    public void setCoefNotorietePracticien(float coefNotorietePracticien) {
+        this.coefNotorietePracticien = coefNotorietePracticien;
     }
 
-    public void setTyp_code(TypePraticien typ_code) {
-        this.typ_code = typ_code;
+    public TypePraticien getCodeTypePracticien() {
+        return codeTypePracticien;
     }
 
-    public Practicien(int pra_num, String pra_nom, String pra_prenom, String pra_cp, String pra_ville, float pra_coefNotoriete, TypePraticien typ_code) {
-        this.pra_num = pra_num;
-        this.pra_nom = pra_nom;
-        this.pra_prenom = pra_prenom;
-        this.pra_cp = pra_cp;
-        this.pra_ville = pra_ville;
-        this.pra_coefNotoriete = pra_coefNotoriete;
-        this.typ_code = typ_code;
+    public void setCodeTypePracticien(TypePraticien codeTypePracticien) {
+        this.codeTypePracticien = codeTypePracticien;
     }
 
 }

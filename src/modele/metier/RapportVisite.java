@@ -13,68 +13,68 @@ import java.util.Date;
  */
 public class RapportVisite {
 
-    private String pre_code;
-    private int rap_num;
-    private Offrir pra_num;
-    private Date rap_date;
-    private String rap_motif;
-    private String rap_bilan;
+    private Visiteur matriculVisiteur;
+    private Practicien numPracticien;
+    private int numRapport;
+    private Date dateRapport;
+    private String motifRapport;
+    private String bilanRapport;
 
-    public String getPre_code() {
-        return pre_code;
+    public RapportVisite(Visiteur matriculVisiteur, Practicien numPracticien, int numRapport, Date dateRapport, String motifRapport, String bilanRapport) {
+        this.matriculVisiteur = matriculVisiteur;
+        this.numPracticien = numPracticien;
+        this.numRapport = numRapport;
+        this.dateRapport = dateRapport;
+        this.motifRapport = motifRapport;
+        this.bilanRapport = bilanRapport;
     }
 
-    public void setPre_code(String pre_code) {
-        this.pre_code = pre_code;
+    public Visiteur getMatriculVisiteur() {
+        return matriculVisiteur;
     }
 
-    public int getRap_num() {
-        return rap_num;
+    public void setMatriculVisiteur(Visiteur matriculVisiteur) {
+        this.matriculVisiteur = matriculVisiteur;
     }
 
-    public void setRap_num(int rap_num) {
-        this.rap_num = rap_num;
+    public Practicien getNumPracticien() {
+        return numPracticien;
     }
 
-    public Offrir getPra_num() {
-        return pra_num;
+    public void setNumPracticien(Practicien numPracticien) {
+        this.numPracticien = numPracticien;
     }
 
-    public void setPra_num(Offrir pra_num) {
-        this.pra_num = pra_num;
+    public int getNumRapport() {
+        return numRapport;
     }
 
-    public Date getRap_date() {
-        return rap_date;
+    public void setNumRapport(int numRapport) {
+        this.numRapport = numRapport;
     }
 
-    public void setRap_date(Date rap_date) {
-        this.rap_date = rap_date;
+    public Date getDateRapport() {
+        return dateRapport;
     }
 
-    public String getRap_motif() {
-        return rap_motif;
+    public void setDateRapport(Date dateRapport) {
+        this.dateRapport = dateRapport;
     }
 
-    public void setRap_motif(String rap_motif) {
-        this.rap_motif = rap_motif;
+    public String getMotifRapport() {
+        return motifRapport;
     }
 
-    public String getRap_bilan() {
-        return rap_bilan;
+    public void setMotifRapport(String motifRapport) {
+        this.motifRapport = motifRapport;
     }
 
-    public void setRap_bilan(String rap_bilan) {
-        this.rap_bilan = rap_bilan;
+    public String getBilanRapport() {
+        return bilanRapport;
     }
 
-    public RapportVisite(String pre_code, int rap_num, Offrir pra_num, Date rap_date, String rap_motif, String rap_bilan) {
-        this.pre_code = pre_code;
-        this.rap_num = rap_num;
-        this.pra_num = pra_num;
-        this.rap_date = rap_date;
-        this.rap_motif = rap_motif;
-        this.rap_bilan = rap_bilan;
+    public void setBilanRapport(String bilanRapport) {
+        this.bilanRapport = bilanRapport;
     }
 
 }

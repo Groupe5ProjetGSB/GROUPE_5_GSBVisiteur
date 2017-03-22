@@ -47,6 +47,7 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
         this.vue.getjButtonVisiteursMP().addActionListener(this);
         this.vue.getjButtonMedicamentsMP().addActionListener(this);
         this.vue.getjButtonPraticiensMP().addActionListener(this);
+        this.vue.getjButtonCompteRenduMP().addActionListener(this);
         // préparer l'état iniitial de la vue
         //afficherLesVisiteur();
     }
@@ -99,6 +100,8 @@ public class CtrlMenuGeneral implements WindowListener, ActionListener {
             ctrlPrincipal.afficherMedicament();
         } else if (e.getSource().equals(vue.getjButtonPraticiensMP())) {
             ctrlPrincipal.afficherPracticien();
+        } else if (e.getSource().equals(vue.getjButtonCompteRenduMP())) {
+            ctrlPrincipal.afficherCompteRendu();
         }
     }
 

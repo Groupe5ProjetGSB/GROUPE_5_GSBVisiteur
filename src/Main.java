@@ -8,12 +8,14 @@ import controleur.CtrlMedicament;
 import controleur.CtrlMenuGeneral;
 import controleur.CtrlPracticien;
 import controleur.CtrlPrincipal;
+import controleur.CtrlRapportVisitie;
 import controleur.CtrlVisiteur;
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import modele.dao.Jdbc;
+import vue.VueCompteRendu;
 import vue.VueMedicament;
 import vue.VueMenuGeneral;
 import vue.VuePracticien;
@@ -62,8 +64,13 @@ public class Main {
         CtrlPracticien leControleurPracticien = new CtrlPracticien(laVuePracticien, leControleurPrincipal);
         leControleurPrincipal.setCtrlPracticien(leControleurPracticien);
 
+        VueCompteRendu laVueCompteRendu = new VueCompteRendu();
+        CtrlRapportVisitie leControleurRapportVisitie = new CtrlRapportVisitie(laVueCompteRendu, leControleurPrincipal);
+        leControleurPrincipal.setCtrlRapportVisitie(leControleurRapportVisitie);
+
         // afficher la vue
-        laVueLeMenuGeneral.setVisible(true);
+        laVueLeMenuGeneral
+                .setVisible(true);
 
     }
 
