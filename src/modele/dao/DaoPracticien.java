@@ -14,6 +14,7 @@ import java.util.List;
 import modele.metier.Labo;
 import modele.metier.Practicien;
 import modele.metier.Secteur;
+import modele.metier.TypePraticien;
 import modele.metier.Visiteur;
 
 /**
@@ -29,7 +30,7 @@ public class DaoPracticien {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM PRACTICIEN";
+        String requete = "SELECT * FROM PRATICIEN";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
@@ -38,15 +39,49 @@ public class DaoPracticien {
             String prenomPracticien = rs.getString("PRA_PRENOM");
             String adressePracticien = rs.getString("PRA_ADRESSE");
             String cpPracticien = rs.getString("PRA_CP");
+            String villePraticien = rs.getString("PRA_VILLE");
             float coefNotorietePracticien = rs.getFloat("PRA_COEFNOTORIETE");
             String codeType = rs.getString("TYP_CODE");
+            TypePraticien unTypePraticien = DaoTypePracticien.selectOne(codeType);
 
-            /*Secteur unSecteur = DaoSecteur.selectOne(codeSecteur);
-            Labo unLabo = DaoLabo.selectOne(codeLabo);
-            unVisiteur = new Visiteur(matriculeVisiteur, nomVisiteur, prenomVisiteur, adresseVisiteur, cpVisiteur, villeVisiteur, dateEmbaucheVisiteur, unSecteur, unLabo);
-            lesVisiteur.add(unVisiteur);*/
+            unPracticien = new Practicien(numPracticien, nomPracticien, prenomPracticien, adressePracticien, cpPracticien, villePraticien, coefNotorietePracticien, unTypePraticien);
+            lesPracticiens.add(unPracticien);
         }
         return lesPracticiens;
+    }
+
+    public static Practicien getOneByNum(int num) {
+        Practicien unPraticien = null;
+
+        ResultSet rs;
+        PreparedStatement pstmt;
+        Jdbc jdbc = Jdbc.getInstance();
+
+        //requête
+        try {
+            String requete = "SELECT * FROM PRATICIEN WHERE PRA_NUM = ?";
+            pstmt = jdbc.getConnexion().prepareStatement(requete);
+            pstmt.setInt(1, num);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                int numeroPraticien = rs.getInt("PRA_NUM");
+                String nomPraticien = rs.getString("PRA_NOM");
+                String prenomPraticien = rs.getString("PRA_PRENOM");
+                String adressePraticien = rs.getString("PRA_ADRESSE");
+                String cpPraticien = rs.getString("PRA_CP");
+                String villePraticien = rs.getString("PRA_VILLE");
+                float coefNotorietePraticien = rs.getFloat("PRA_COEFNOTORIETE");
+                String codeType = rs.getString("TYP_CODE");
+                //Methode pour récup le type praticien
+                TypePraticien unTypePraticien = DaoTypePracticien.selectOne(codeType);
+                unPraticien = new Practicien(numeroPraticien, nomPraticien, prenomPraticien, adressePraticien, cpPraticien, villePraticien, coefNotorietePraticien, unTypePraticien);
+            }
+            rs.close();
+            pstmt.close();
+        } catch (Exception e) {
+        }
+        
+        return unPraticien;
     }
 
 }
